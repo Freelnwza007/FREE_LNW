@@ -1,4 +1,4 @@
-const apiBase = window.location.port === "5000" ? "" : "http://localhost:5000";
+const apiBase = ["localhost", "127.0.0.1"].includes(window.location.hostname) && window.location.port !== "5000" ? "http://localhost:5000" : "";
 const token = localStorage.getItem("portAbleToken");
 const form = document.querySelector("#product-form");
 const message = document.querySelector("#admin-message");

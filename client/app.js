@@ -29,7 +29,7 @@ const fallbackProducts = [
   ["Yuzu Soda", "REFRESHER", "ยูซุหอมสดชื่น ผสมโซดา ดื่มแล้วตื่นตัว", 105, "tea", "CITRUS"],
 ].map(([name, productType, description, price, image, badge]) => ({ name, productType, description, price, image: photo[image], badge }));
 
-const apiBase = window.location.port === "5000" ? "" : "http://localhost:5000";
+const apiBase = ["localhost", "127.0.0.1"].includes(window.location.hostname) && window.location.port !== "5000" ? "http://localhost:5000" : "";
 const productList = document.querySelector("#product-list");
 const categoryButtons = document.querySelector("#menu-filters");
 let activeCategory = "ALL";

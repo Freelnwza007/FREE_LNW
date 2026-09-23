@@ -1,0 +1,21 @@
+{
+  "name": "port-able-tracks",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm --prefix client run build",
+    "dev": "npm --prefix client run dev",
+    "start": "npm --prefix server start"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.3",
+    "multer": "^2.4.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}
