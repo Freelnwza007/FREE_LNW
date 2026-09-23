@@ -1,0 +1,321 @@
+/* Enhanced Interactive Animations & Effects */
+
+/* Decorative background elements */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(182, 84, 45, .03) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(182, 84, 45, .03) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(182, 84, 45, .02) 1px, transparent 1px),
+    radial-gradient(circle at 90% 70%, rgba(182, 84, 45, .03) 1px, transparent 1px),
+    radial-gradient(circle at 10% 10%, rgba(182, 84, 45, .02) 1px, transparent 1px);
+  background-size: 300px 300px, 350px 350px, 400px 400px, 320px 320px, 280px 280px;
+  background-attachment: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Logo animations */
+.logo {
+  animation: slideInFromLeft .8s ease-out !important;
+  transition: all .4s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.logo:hover {
+  transform: scale(1.08) rotate(1deg) !important;
+}
+
+/* Navigation link effects */
+.site-nav nav a {
+  transition: all .4s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.site-nav nav a::after {
+  background: linear-gradient(90deg, #b6542d, #f4a460) !important;
+  height: 2.5px !important;
+  transition: width .4s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.site-nav nav a:hover {
+  font-weight: 700 !important;
+}
+
+/* Account button shimmer effect */
+.site-nav .nav-account {
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all .4s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.site-nav .nav-account::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent) !important;
+  transition: left .6s ease !important;
+}
+
+.site-nav .nav-account:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(182,84,45,.4) !important;
+}
+
+.site-nav .nav-account:hover::before {
+  left: 100% !important;
+}
+
+/* Primary button with ripple effect */
+.primary-button {
+  position: relative !important;
+  overflow: hidden !important;
+  animation: fadeInUp .8s ease-out .2s both !important;
+  transition: all .4s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.primary-button::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.3) !important;
+  transform: translate(-50%, -50%) !important;
+  transition: width .6s ease, height .6s ease !important;
+}
+
+.primary-button:hover {
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: 0 16px 40px rgba(197,107,63,.5) !important;
+}
+
+.primary-button:active::after {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+/* Enhanced product cards with stagger animation */
+.product-card {
+  position: relative !important;
+  animation: fadeInUp .6s ease-out backwards !important;
+  transition: all .4s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.product-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent) !important;
+  transition: left .6s ease !important;
+  z-index: 1 !important;
+}
+
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: 0 24px 50px rgba(75,38,21,.2) !important;
+}
+
+.product-card:hover::before {
+  left: 100% !important;
+}
+
+/* Stagger delays for product cards */
+.product-list .product-card:nth-child(1) { animation-delay: 0s !important; }
+.product-list .product-card:nth-child(2) { animation-delay: .1s !important; }
+.product-list .product-card:nth-child(3) { animation-delay: .2s !important; }
+.product-list .product-card:nth-child(4) { animation-delay: .3s !important; }
+.product-list .product-card:nth-child(n+5) { animation-delay: .4s !important; }
+
+/* Button effects */
+.add-cart, .login-button {
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all .3s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.add-cart::before, .login-button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent) !important;
+  transition: left .5s ease !important;
+}
+
+.add-cart:hover, .login-button:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 10px 20px rgba(182,84,45,.35) !important;
+}
+
+.add-cart:active, .login-button:active {
+  transform: scale(.98) !important;
+}
+
+.add-cart:hover::before, .login-button:hover::before {
+  left: 100% !important;
+}
+
+/* Cart trigger floating animation */
+.cart-trigger {
+  animation: float 3s ease-in-out infinite !important;
+  transition: all .4s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.cart-trigger:hover {
+  transform: translateY(-6px) scale(1.08) !important;
+  box-shadow: 0 20px 45px rgba(182,84,45,.5) !important;
+  animation: none !important;
+}
+
+/* Filter button effects */
+.menu-filters button {
+  position: relative !important;
+  transition: all .3s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.menu-filters button::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent) !important;
+  transition: left .5s ease !important;
+}
+
+.menu-filters button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 16px rgba(182,84,45,.15) !important;
+}
+
+.menu-filters button:hover::after {
+  left: 100% !important;
+}
+
+.menu-filters button.is-active {
+  animation: bounce .4s ease !important;
+}
+
+/* Hero content animations */
+.hero-copy {
+  animation: slideInFromLeft .8s ease-out backwards !important;
+}
+
+.hero h1 {
+  animation: fadeInUp .8s ease-out .2s backwards !important;
+}
+
+.hero-copy > p {
+  animation: fadeInUp .8s ease-out .3s backwards !important;
+}
+
+.primary-button {
+  animation: fadeInUp .8s ease-out .4s backwards !important;
+}
+
+/* Section heading animations */
+.section-heading h2 {
+  animation: fadeInUp .6s ease-out backwards !important;
+}
+
+.section-heading > p {
+  animation: fadeInUp .6s ease-out .1s backwards !important;
+}
+
+/* Close button hover effect */
+.close-cart {
+  transition: all .3s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.close-cart:hover {
+  transform: rotate(90deg) scale(1.1) !important;
+}
+
+/* Logout button with enhanced hover */
+.logout-button {
+  transition: all .4s cubic-bezier(.34,.1,.68,1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.logout-button::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent) !important;
+  transition: left .5s ease !important;
+}
+
+.logout-button:hover::after {
+  left: 100% !important;
+}
+
+/* Admin panel hover effects */
+.admin-product {
+  transition: all .3s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.admin-product:hover {
+  background: rgba(182, 84, 45, .08) !important;
+  transform: translateX(4px) !important;
+}
+
+.admin-actions button {
+  transition: all .3s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+.admin-actions button:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+}
+
+/* Smooth transitions on all interactive elements */
+button, a, input, textarea, select {
+  transition: all .3s cubic-bezier(.34,.1,.68,1) !important;
+}
+
+/* Text selection styling */
+::selection {
+  background: rgba(182, 84, 45, .2);
+  color: #33251d;
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states */
+button:focus, a:focus, input:focus, textarea:focus, select:focus {
+  outline: 2px solid #b6542d !important;
+  outline-offset: 2px !important;
+}
+
+/* Loading shimmer */
+@keyframes shimmerLoad {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  animation: shimmerLoad 2s infinite !important;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 50%, rgba(255,255,255,0) 100%) !important;
+  background-size: 1000px 100% !important;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "free-lnw-client",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

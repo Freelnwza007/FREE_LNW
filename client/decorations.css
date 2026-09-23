@@ -1,0 +1,350 @@
+/* Decorative Elements & Layout Enhancements */
+
+/* Hero section decorative blobs */
+.hero::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -40px !important;
+  right: -60px !important;
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(244, 164, 96, .1) 0%, transparent 70%) !important;
+}
+
+.hero::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -30px !important;
+  left: -50px !important;
+  width: 250px !important;
+  height: 250px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(182, 84, 45, .08) 0%, transparent 70%) !important;
+}
+
+/* Section heading decorations */
+.section-heading::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -20px !important;
+  left: -30px !important;
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(244, 164, 96, .1) 0%, transparent 70%) !important;
+}
+
+.section-heading::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -40px !important;
+  right: -40px !important;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(182, 84, 45, .08) 0%, transparent 70%) !important;
+}
+
+/* Coffee note section decorations */
+.coffee-note::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -50px !important;
+  right: -50px !important;
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(244, 164, 96, .08) 0%, transparent 70%) !important;
+}
+
+.coffee-note::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -40px !important;
+  left: -30px !important;
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(182, 84, 45, .06) 0%, transparent 70%) !important;
+}
+
+/* Story section accent line */
+.story-section::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  width: 4px !important;
+  height: 100px !important;
+  background: linear-gradient(180deg, transparent, #b6542d, transparent) !important;
+  border-radius: 2px !important;
+}
+
+/* Account section decorations */
+.account-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -60px !important;
+  left: -40px !important;
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(182, 84, 45, .07) 0%, transparent 70%) !important;
+}
+
+.account-section::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -50px !important;
+  right: -50px !important;
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(244, 164, 96, .08) 0%, transparent 70%) !important;
+}
+
+/* Product card corner accents */
+.product-card .product-content::before {
+  content: '✦' !important;
+  position: absolute !important;
+  top: 8px !important;
+  left: 12px !important;
+  font-size: 0.6rem !important;
+  color: #b6542d !important;
+  opacity: 0.3 !important;
+}
+
+/* Menu section top decoration */
+.menu-section::before {
+  content: '' !important;
+  display: block !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, #b6542d, transparent) !important;
+  margin-bottom: 30px !important;
+}
+
+/* Coffee note decorative lines */
+.coffee-note-points p::before {
+  content: '◆' !important;
+  display: inline-block !important;
+  margin-right: 12px !important;
+  font-size: 0.6rem !important;
+  color: #f4a460 !important;
+  animation: pulse 2s ease-in-out infinite !important;
+}
+
+/* Admin section decorations */
+.admin-intro::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -30px !important;
+  left: -40px !important;
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(244, 164, 96, .08) 0%, transparent 70%) !important;
+}
+
+.admin-intro::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -50px !important;
+  right: -30px !important;
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(182, 84, 45, .06) 0%, transparent 70%) !important;
+}
+
+/* Footer decoration */
+footer::before {
+  content: '' !important;
+  display: block !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, #b6542d, transparent) !important;
+  margin-bottom: 20px !important;
+}
+
+/* Floating accent dots around sections */
+main::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 30% !important;
+  left: 5% !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: 2px solid rgba(182, 84, 45, .1) !important;
+  border-radius: 50% !important;
+  animation: float 6s ease-in-out infinite !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+main::after {
+  content: '' !important;
+  position: fixed !important;
+  top: 60% !important;
+  right: 3% !important;
+  width: 60px !important;
+  height: 60px !important;
+  border: 1.5px solid rgba(244, 164, 96, .08) !important;
+  border-radius: 50% !important;
+  animation: float 8s ease-in-out infinite reverse !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Product list grid optimization */
+.menu-section .product-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 28px !important;
+}
+
+/* Enhanced product card with side accents */
+.product-card {
+  border-left: 4px solid transparent !important;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, .95) 100%) !important;
+}
+
+.product-card:hover {
+  border-left-color: #b6542d !important;
+}
+
+/* Eyebrow text styling */
+.eyebrow {
+  position: relative !important;
+  display: inline-block !important;
+  padding-bottom: 4px !important;
+}
+
+.eyebrow::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, #f4a460, transparent) !important;
+}
+
+/* Accent lines under headings */
+.section-heading h2::after {
+  content: '' !important;
+  display: block !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #b6542d, #f4a460) !important;
+  border-radius: 2px !important;
+  margin-top: 8px !important;
+}
+
+/* Cart drawer decoration */
+.cart-header::after {
+  content: '' !important;
+  display: block !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, #b6542d, transparent) !important;
+  position: absolute !important;
+  bottom: -12px !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Hero stamp floating animation and enhancement */
+.hero-stamp {
+  animation: float 4s ease-in-out infinite !important;
+  position: relative !important;
+}
+
+.hero-stamp::before {
+  content: '☕' !important;
+  position: absolute !important;
+  top: -30px !important;
+  right: 10px !important;
+  font-size: 1.5rem !important;
+  opacity: 0.2 !important;
+}
+
+/* Smooth page transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Loading state shimmer */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.loading {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 50%, rgba(255,255,255,0) 100%) !important;
+  background-size: 1000px 100% !important;
+  animation: shimmer 2s infinite !important;
+}
+
+/* Accent triangles/shapes */
+.hero-copy {
+  position: relative !important;
+}
+
+.hero-copy::before {
+  content: '▲' !important;
+  position: absolute !important;
+  top: -20px !important;
+  left: 0 !important;
+  font-size: 0.6rem !important;
+  color: rgba(244, 164, 96, .3) !important;
+  animation: float 3s ease-in-out infinite !important;
+}
+
+/* Coffee note points icon animation */
+@keyframes slideInIcon {
+  0% { transform: translateX(-10px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.coffee-note-points p {
+  animation: slideInIcon 0.5s ease-out backwards !important;
+}
+
+.coffee-note-points p:nth-child(1) { animation-delay: 0s !important; }
+.coffee-note-points p:nth-child(2) { animation-delay: 0.1s !important; }
+.coffee-note-points p:nth-child(3) { animation-delay: 0.2s !important; }
+
+/* Section padding optimization */
+.menu-section,
+.story-section,
+.account-section {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+  position: relative !important;
+}
+
+/* Product grid gap enhancement */
+.product-list {
+  row-gap: 32px !important;
+  column-gap: 28px !important;
+}
+
+/* More decorative dots pattern background for sections */
+.menu-section {
+  background-image: 
+    radial-gradient(circle, rgba(182, 84, 45, .02) 1px, transparent 1px),
+    radial-gradient(circle, rgba(244, 164, 96, .02) 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px;
+  background-position: 0 0, 50px 50px;
+}
+
+/* Icon decorations on sections */
+.story-section::after {
+  content: '✧ ✧ ✧' !important;
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 10px !important;
+  font-size: 0.8rem !important;
+  color: #b6542d !important;
+  opacity: 0.2 !important;
+  letter-spacing: 8px !important;
+}
