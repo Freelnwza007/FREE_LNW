@@ -1,3 +1,5 @@
+import staticCatalog from "./catalog.json";
+
 const apiBase = ["localhost", "127.0.0.1"].includes(window.location.hostname) && window.location.port !== "5000" ? "http://localhost:5000" : "";
 const catalogPhotos = [
   "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85",
@@ -22,7 +24,7 @@ const catalogPhotos = [
 const productList = document.querySelector("#product-list");
 const categoryButtons = document.querySelector("#menu-filters");
 let activeCategory = "ALL";
-let catalog = [];
+let catalog = staticCatalog;
 let cart = JSON.parse(localStorage.getItem("portAbleCart") || "[]");
 const currency = (number) => `฿${Number(number).toLocaleString("th-TH")}`;
 const imageFor = (product, index = 0) => product.images?.[0] || product.image || catalogPhotos[Math.abs(index) % catalogPhotos.length];
@@ -86,6 +88,6 @@ document.querySelector("#payment-done").addEventListener("click", () => {
   pendingOrderNumber = "";
   checkoutForm.reset();
 });
-fetch(`${apiBase}/api/products`).then((response) => response.ok ? response.json() : []).then((products) => { catalog = products; cart = cart.map((item) => { const productIndex = products.findIndex((product) => productKey(product) === item.key); return { ...item, image: imageFor(products[productIndex] || {}, productIndex < 0 ? 0 : productIndex) }; }); saveCart(); renderProducts(); renderCart(); }).catch(renderProducts);
+fetch(`${apiBase}/api/products`).then((response) => response.ok ? response.json() : []).then((products) => { catalog = products.length ? products : staticCatalog; cart = cart.map((item) => { const productIndex = catalog.findIndex((product) => productKey(product) === item.key); return { ...item, image: imageFor(catalog[productIndex] || {}, productIndex < 0 ? 0 : productIndex) }; }); saveCart(); renderProducts(); renderCart(); }).catch(() => { catalog = staticCatalog; renderProducts(); renderCart(); });
 const profilePanel = document.querySelector("#profile-panel"); const guestPanel = document.querySelector("#guest-panel"); const showProfile = (user) => { document.querySelector("#profile-name").textContent = user.name || "-"; document.querySelector("#profile-email").textContent = user.email || "-"; document.querySelector("#profile-phone").textContent = user.phone || "ยังไม่ได้เพิ่ม"; profilePanel.classList.remove("is-hidden"); guestPanel.classList.add("is-hidden"); document.querySelector(".nav-account").textContent = "บัญชีของฉัน"; document.querySelector(".nav-account").href = "#account"; if (user.role === "admin" && !document.querySelector(".nav-admin")) { const link = document.createElement("a"); link.className = "nav-admin"; link.href = "/admin.html"; link.textContent = "จัดการสินค้า"; document.querySelector(".site-nav nav").prepend(link); } };
 const loadProfile = async () => { const token = localStorage.getItem("portAbleToken"); if (!token) return; try { const response = await fetch(`${apiBase}/api/auth/me`, { headers: { Authorization: `Bearer ${token}` } }); if (!response.ok) throw new Error(); const data = await response.json(); showProfile(data.user); } catch { localStorage.removeItem("portAbleToken"); } }; document.querySelector("#logout-button").addEventListener("click", () => { localStorage.removeItem("portAbleToken"); location.reload(); }); loadProfile(); renderCart();
