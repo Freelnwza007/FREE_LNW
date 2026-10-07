@@ -3,91 +3,91 @@
     "name": "คาปูชิโน่",
     "productType": "coffee",
     "description": "ขมมาก",
-    "images": ["https://images.unsplash.com/photo-1564327367919-cb377ea6a88f?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1564327367919-cb377ea6a88f?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "F-001", "size": "Regular", "price": 70 }]
   },
   {
     "name": "Free Lnw House Blend",
     "productType": "coffee",
     "description": "เอสเปรสโซเบลนด์คั่วกลางเข้ม บอดี้นุ่ม กลิ่นช็อกโกแลตและคาราเมล",
-    "images": ["https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-001", "size": "Regular", "price": 120 }]
   },
   {
     "name": "Chiang Rai Single Origin",
     "productType": "coffee",
     "description": "อาราบิก้าคั่วกลางจากเชียงราย โทนส้มหวาน ช็อกโกแลต และอัลมอนด์",
-    "images": ["https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-002", "size": "Regular", "price": 150 }]
   },
   {
     "name": "Americano",
     "productType": "coffee",
     "description": "เอสเปรสโซเต็มรสชาติ ดื่มง่ายได้ทั้งร้อนและเย็น",
-    "images": ["https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-003", "size": "Regular", "price": 90 }]
   },
   {
     "name": "Cappuccino",
     "productType": "coffee",
     "description": "เอสเปรสโซกับโฟมนมเนียนละเอียด หอมละมุนทุกคำ",
-    "images": ["https://images.unsplash.com/photo-1721257075205-c26d4a22c695?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1721257075205-c26d4a22c695?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-004", "size": "Regular", "price": 115 }]
   },
   {
     "name": "Dirty Coffee",
     "productType": "coffee",
     "description": "นมเย็นจัดรับเอสเปรสโซร้อน รสเข้มและนุ่มในแก้วเดียว",
-    "images": ["https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-005", "size": "Regular", "price": 130 }]
   },
   {
     "name": "Cold Brew",
     "productType": "coffee",
     "description": "กาแฟสกัดเย็น 18 ชั่วโมง รสนุ่มหวาน ปลายสะอาด",
-    "images": ["https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-006", "size": "Regular", "price": 120 }]
   },
   {
     "name": "Iced Orange Espresso",
     "productType": "coffee",
     "description": "เอสเปรสโซเข้มข้นกับน้ำส้มสด หอม สดชื่น ดื่มง่าย",
-    "images": ["https://images.unsplash.com/photo-1502453271340-254777686dd9?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1502453271340-254777686dd9?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-007", "size": "Regular", "price": 135 }]
   },
   {
     "name": "Oat Milk Latte",
     "productType": "milk coffee",
     "description": "ลาเต้นมโอ๊ตรสละมุน โฟมนุ่ม หวานธรรมชาติ",
-    "images": ["https://images.unsplash.com/photo-1520093259885-5852d270f788?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1520093259885-5852d270f788?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "COF-008", "size": "Regular", "price": 145 }]
   },
   {
     "name": "Butter Croissant",
     "productType": "bakery",
     "description": "ครัวซองต์เนยสด อบใหม่ทุกเช้า กรอบนอก นุ่มใน",
-    "images": ["https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "BAK-001", "size": "Regular", "price": 85 }]
   },
   {
     "name": "Chocolate Cookie",
     "productType": "bakery",
     "description": "คุกกี้ช็อกโกแลตชิพเนื้อหนึบ หวานพอดี",
-    "images": ["https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "BAK-002", "size": "Regular", "price": 65 }]
   },
   {
     "name": "Fresh Milk",
     "productType": "milk",
     "description": "นมสดเย็นรสนุ่ม ดื่มเดี่ยว ๆ หรือเพิ่มความละมุนให้กาแฟ",
-    "images": ["https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "MLK-001", "size": "Regular", "price": 75 }]
   },
   {
     "name": "Peach Tea Sparkling",
     "productType": "refresher",
     "description": "ชาพีชหอมหวานซ่าพอดี สำหรับวันที่อยากพักจากกาแฟ",
-    "images": ["https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=85"],
+    "images": ["https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=640&q=75"],
     "variants": [{ "sku": "RFR-001", "size": "Regular", "price": 95 }]
   }
 ]
