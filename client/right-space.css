@@ -348,3 +348,5 @@ main {
   height: 1px !important;
   background: linear-gradient(90deg, transparent, rgba(182, 84, 45, .1), transparent) !important;
 }
+
+.checkout-form{display:grid;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid #d9c8b8}.checkout-form label{display:grid;gap:6px;color:#604c3e;font-size:.84rem;font-weight:600}.checkout-form input,.checkout-form textarea{width:100%;padding:10px 12px;border:1px solid #d9c8b8;border-radius:6px;background:#fff;font:inherit;color:#33251d}.checkout-form input:focus,.checkout-form textarea:focus{outline:2px solid #b6542d55;border-color:#b6542d}.checkout-form .checkout-button{justify-content:center;text-align:center}.payment-panel{margin-top:14px;text-align:center;color:#604c3e;font-size:.9rem}.payment-panel img{display:block;width:240px;height:240px;max-width:100%;margin:10px auto;background:#fff}.payment-panel .checkout-button{justify-content:center;text-align:center}.payment-note{color:#826e5f;font-size:.78rem;line-height:1.5}

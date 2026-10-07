@@ -47,7 +47,56 @@ const toggleCart = (open) => { document.querySelector("#cart-drawer").classList.
 categoryButtons.addEventListener("click", (event) => { const button = event.target.closest("button[data-category]"); if (!button) return; activeCategory = button.dataset.category; categoryButtons.querySelectorAll("button").forEach((item) => item.classList.toggle("is-active", item === button)); renderProducts(); });
 document.addEventListener("click", (event) => { const addButton = event.target.closest(".add-cart"); if (addButton) { addToCart(addButton.dataset.product); addButton.innerHTML = "เพิ่มแล้ว ✓"; setTimeout(() => { addButton.innerHTML = "เพิ่ม <span>+</span>"; }, 900); } const action = event.target.dataset.cartAction; if (action) { const index = cart.findIndex((item) => item.key === event.target.dataset.key); if (index < 0) return; if (action === "increase") cart[index].quantity += 1; if (action === "decrease") cart[index].quantity > 1 ? cart[index].quantity -= 1 : cart.splice(index, 1); if (action === "remove") cart.splice(index, 1); saveCart(); renderCart(); } });
 document.querySelector("#open-cart").addEventListener("click", () => toggleCart(true)); document.querySelector("#close-cart").addEventListener("click", () => toggleCart(false)); document.querySelector("#cart-overlay").addEventListener("click", () => toggleCart(false));
-document.querySelector("#checkout-button").addEventListener("click", () => { if (!cart.length) return; cart = []; saveCart(); renderCart(); toggleCart(false); document.querySelector("#checkout-message").textContent = "รับรายการสั่งซื้อแล้ว! ทางร้านจะติดต่อเพื่อยืนยันการชำระเงิน"; });
+const checkoutForm = document.querySelector("#checkout-form");
+const paymentPanel = document.querySelector("#payment-panel");
+let pendingOrderNumber = "";
+document.querySelector("#checkout-button").addEventListener("click", () => {
+  if (!cart.length) return;
+  document.querySelector("#checkout-message").textContent = "";
+  checkoutForm.classList.remove("is-hidden");
+  checkoutForm.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+checkoutForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!cart.length) return;
+  const submit = checkoutForm.querySelector("[type=submit]");
+  submit.disabled = true;
+  document.querySelector("#checkout-message").textContent = "กำลังสร้างคำสั่งซื้อ...";
+  try {
+    const formData = new FormData(checkoutForm);
+    const response = await fetch(`${apiBase}/api/orders`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        shippingAddress: { name: formData.get("name"), phone: formData.get("phone"), fullAddress: formData.get("fullAddress") },
+        items: cart.map(({ key, quantity }) => ({ key, quantity })),
+      }),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.message || "สร้างคำสั่งซื้อไม่สำเร็จ");
+    pendingOrderNumber = result.orderNumber;
+    document.querySelector("#payment-qr").src = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(result.promptPayPayload)}`;
+    document.querySelector("#payment-order").textContent = `เลขที่คำสั่งซื้อ ${result.orderNumber} · ${currency(result.total)}`;
+    paymentPanel.classList.remove("is-hidden");
+    checkoutForm.classList.add("is-hidden");
+    document.querySelector("#checkout-message").textContent = "สร้างคำสั่งซื้อแล้ว กรุณาชำระเงินตาม QR ด้านล่าง";
+  } catch (error) {
+    document.querySelector("#checkout-message").textContent = error.message;
+  } finally {
+    submit.disabled = false;
+  }
+});
+document.querySelector("#payment-done").addEventListener("click", () => {
+  if (!pendingOrderNumber) return;
+  cart = [];
+  saveCart();
+  renderCart();
+  paymentPanel.classList.add("is-hidden");
+  toggleCart(false);
+  document.querySelector("#checkout-message").textContent = `บันทึกคำสั่งซื้อ ${pendingOrderNumber} แล้ว กรุณาติดต่อร้านค้าพร้อมแจ้งเลขคำสั่งซื้อเพื่อยืนยันยอดโอน`;
+  pendingOrderNumber = "";
+  checkoutForm.reset();
+});
 fetch(`${apiBase}/api/products`).then((response) => response.ok ? response.json() : []).then((products) => { catalog = products.length ? products : fallbackProducts; renderProducts(); }).catch(renderProducts);
 const profilePanel = document.querySelector("#profile-panel"); const guestPanel = document.querySelector("#guest-panel"); const showProfile = (user) => { document.querySelector("#profile-name").textContent = user.name || "-"; document.querySelector("#profile-email").textContent = user.email || "-"; document.querySelector("#profile-phone").textContent = user.phone || "ยังไม่ได้เพิ่ม"; profilePanel.classList.remove("is-hidden"); guestPanel.classList.add("is-hidden"); document.querySelector(".nav-account").textContent = "บัญชีของฉัน"; document.querySelector(".nav-account").href = "#account"; if (user.role === "admin" && !document.querySelector(".nav-admin")) { const link = document.createElement("a"); link.className = "nav-admin"; link.href = "/admin.html"; link.textContent = "จัดการสินค้า"; document.querySelector(".site-nav nav").prepend(link); } };
 const loadProfile = async () => { const token = localStorage.getItem("portAbleToken"); if (!token) return; try { const response = await fetch(`${apiBase}/api/auth/me`, { headers: { Authorization: `Bearer ${token}` } }); if (!response.ok) throw new Error(); const data = await response.json(); showProfile(data.user); } catch { localStorage.removeItem("portAbleToken"); } }; document.querySelector("#logout-button").addEventListener("click", () => { localStorage.removeItem("portAbleToken"); location.reload(); }); loadProfile(); renderCart();
